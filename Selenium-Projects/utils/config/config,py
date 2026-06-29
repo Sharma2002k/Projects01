@@ -1,0 +1,12 @@
+import configparser
+import os
+
+config = configparser.ConfigParser()
+
+config.read(os.path.join(os.path.dirname(__file__), "config.ini"))
+
+BASE_URL = config["DEFAULT"]["base_url"]
+USERNAME = config["DEFAULT"]["username"]
+PASSWORD = config["DEFAULT"]["password"]
+BROWSER = config["DEFAULT"]["browser"]
+WAIT = int(config["DEFAULT"]["implicit_wait"])
